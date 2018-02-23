@@ -1,34 +1,44 @@
 /*eslint-env browser*/
 //Global Variables
 var studentAmount = 5;
-var Ursula = parseFloat(window.prompt("Please Enter the score for Student Name: Ursula"));
-var Paul = parseFloat(window.prompt("Please Enter the score for Student Name: Paul "));
-var Henry = parseFloat(window.prompt("Please Enter the score for Student Name: Henry"));
-var Tabitha =  parseFloat(window.prompt("Please Enter the score for Student Name: Tabitha"));
-var Lucy =  parseFloat(window.prompt("Please Enter the score for Student Name: Lucy"));
+var Ursula = new Object();
+var Paul = new Object();
+var Henry = new Object();
+var Tabitha = new Object();
+var Lucy = new Object();
+
+Ursula.grade = parseFloat(window.prompt("Please Enter the score for Student Name: Ursula"));
+Paul.grade = parseFloat(window.prompt("Please Enter the score for Student Name: Paul "));
+Henry.grade = parseFloat(window.prompt("Please Enter the score for Student Name: Henry"));
+Tabitha.grade =  parseFloat(window.prompt("Please Enter the score for Student Name: Tabitha"));
+Lucy.grade =  parseFloat(window.prompt("Please Enter the score for Student Name: Lucy"));
 var classAverage = parseFloat((Ursula + Paul + Henry + Tabitha + Lucy) / studentAmount);
 
-var classList = [Ursula,Paul,Henry,Tabitha,Lucy];
+var classList = [Ursula.grade, Paul.grade, Henry.grade, Tabitha.grade, Lucy.grade];
+
+var i;
+
 
 
 /*for / in LOOP!*/
 
-if (classAverage[i]> 100){
-i += 
+for (i = 0; i < classList.length; i+=1){
 
-}if else(classAverage[i]<100){
-    
-}if else(var <90){
-    
-}if else(var <80){
-    
+        if (classList[i] > 100){
+        window.console.log("You entered a grade higher than 100%");
+
+        }else if (classList[i] < 90){
+            classList[i].grade += "A";
+
+        }else if(classList[i] <80){
+            classList[i].grade += "B";
+        }else if(classList[i] <70){
+            classList[i].grade += "C";
+        }else if(classList[i] <60){
+            classList[i].grade += "D";
+        }
 }
-if else(var <70){
-    
-}if else(var <60){
-    
-}
-*/
+window.console.log(classList)
 window.console.log("Student(s)\t\t"  + "Grade");
 window.console.log("--------------------------------------");
 window.console.log("Ursula:\t\t " + Ursula + "\n");
